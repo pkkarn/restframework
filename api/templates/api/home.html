@@ -1,0 +1,14 @@
+{% extends 'api/base.html' %}
+{% block content %}
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1 style="font-size: 60px">Mirror Score</h1>
+                 <div class="alert alert-warning">API Project <strong>Developed By</strong>&nbsp;<span class="badge badge-secondary">PK Karn</span></div>
+        <a role="button" class="btn btn-warning btn-lg" href="{% url 'questions' %}">Teacher's API</a>&nbsp;&nbsp;<a role="button" class="btn btn-warning btn-lg" href="{% url 'student' %}">Student's API</a>
+            <br><br>
+            <a role="button" class="btn btn-primary btn-lg btn-block" href="{% url 'submit_question' %}">Submit Your Question</a>
+        </div>
+    </div>
+
+{% endblock %}

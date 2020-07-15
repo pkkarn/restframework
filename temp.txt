@@ -1,0 +1,56 @@
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
+
+
+picture = models.ImageField(upload_to='pictures/%Y/%m/%d/', max_length=255, null=True, blank=True)
+
+--------------------------------------------------------------------------------------------
+                          Django Rest-Framework - Serializer
+                          ---------------------
+
+First Setup You Model, Your Url and Every thing then Follow Up Steps
+
+1. pip install djangorestframework
+2. Add installed Apps : 'rest_framework',
+
+Now Add and import
+
+--- views.py
+from rest_framework.decorators import api_view  (For GET, POST, DELETE)
+from rest_framework.response import Response  (For Response, to access Django Rest Framework Interface)
+
+//////////////Avoid If You Can//////
+@api_view(['GET'])  # Read Only
+def api(request):
+    api_urls = {   # Dictionary
+        'List': '/question/',
+        'create': '/student/',
+        'teacher': '/teacher/',
+    }
+
+///////////
+
+Serializing Data:
+
+Model Object --- JsonResponse
+
+create file -- serializers.py
+
+In serializers --
+      create a class and define which model we want to serialize
+
+      from rest_framework import serializers
+      from *model import Query(Class name)
+
+      class QuerySerializers(serializers.ModelSerializer): # Create Class Name
+            class Meta:
+                model = Query   # Model Name
+                fields = '__all__'  # Which Fields
+
+
+Now Import serializers into views.py
+
+
+
+
+
