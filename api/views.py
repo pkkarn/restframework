@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from .serializers import QuerySerializers
 from .forms import QueryForm
 
-
 # Create your views here.
 
 def home(request):
